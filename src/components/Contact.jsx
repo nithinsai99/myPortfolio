@@ -24,24 +24,24 @@ export default function Contact() {
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6 }}
           onSubmit={(e) => e.preventDefault()}
-          className="bg-white p-10 rounded-2xl shadow-lg flex flex-col justify-between w-full min-h-[400px] max-w-xl mx-auto"
+          className="bg-white dark:bg-slate-800 p-10 rounded-2xl shadow-lg flex flex-col justify-between w-full min-h-[400px] max-w-xl mx-auto border dark:border-slate-700"
         >
           <div>
-            <label className="block text-sm text-slate-600">Name</label>
+            <label className="block text-sm text-slate-600 dark:text-slate-300">Name</label>
             <input
-              className="mt-2 w-full rounded-md border px-4 py-2 focus:ring-2 focus:ring-indigo-500 outline-none"
+              className="mt-2 w-full rounded-md border px-4 py-2 focus:ring-2 focus:ring-indigo-500 outline-none bg-slate-50 dark:bg-slate-700 dark:text-white dark:border-slate-600"
               placeholder="Your name"
             />
 
-            <label className="block text-sm text-slate-600 mt-4">Email</label>
+            <label className="block text-sm text-slate-600 dark:text-slate-300 mt-4">Email</label>
             <input
-              className="mt-2 w-full rounded-md border px-4 py-2 focus:ring-2 focus:ring-indigo-500 outline-none"
+              className="mt-2 w-full rounded-md border px-4 py-2 focus:ring-2 focus:ring-indigo-500 outline-none bg-slate-50 dark:bg-slate-700 dark:text-white dark:border-slate-600"
               placeholder="you@domain.com"
             />
 
-            <label className="block text-sm text-slate-600 mt-4">Message</label>
+            <label className="block text-sm text-slate-600 dark:text-slate-300 mt-4">Message</label>
             <textarea
-              className="mt-2 w-full rounded-md border px-4 py-2 h-32 focus:ring-2 focus:ring-indigo-500 outline-none"
+              className="mt-2 w-full rounded-md border px-4 py-2 h-32 focus:ring-2 focus:ring-indigo-500 outline-none bg-slate-50 dark:bg-slate-700 dark:text-white dark:border-slate-600"
               placeholder="What would you like to build?"
             />
           </div>
@@ -61,15 +61,15 @@ export default function Contact() {
           initial={{ opacity: 0, x: 40 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6 }}
-          className="bg-white p-10 rounded-2xl shadow-lg flex-col justify-between w-full min-h-[400px] max-w-xl mx-auto"
+          className="bg-white dark:bg-slate-800 p-10 rounded-2xl shadow-lg flex-col justify-between w-full min-h-[400px] max-w-xl mx-auto border dark:border-slate-700"
         >
           <div>
-            <h3 className="text-sm text-slate-500">Quick links</h3>
+            <h3 className="text-sm text-slate-500 dark:text-slate-400">Quick links</h3>
             <ul className="mt-4 space-y-4 text-sm">
               <li>
                 <a
                   href="#resume"
-                  className="inline-flex items-center gap-2 hover:underline text-slate-700"
+                  className="inline-flex items-center gap-2 hover:underline text-slate-700 dark:text-slate-200 dark:hover:text-white"
                 >
                   <FileText size={18} /> Download Resume
                 </a>
@@ -79,7 +79,7 @@ export default function Contact() {
                   href="https://github.com/nithinsai99"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 hover:underline text-slate-700"
+                  className="inline-flex items-center gap-2 hover:underline text-slate-700 dark:text-slate-200 dark:hover:text-white"
                 >
                   <Github size={18} /> GitHub Projects
                 </a>
@@ -89,7 +89,7 @@ export default function Contact() {
                   href="https://www.linkedin.com/in/nithinsai-m"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 hover:underline text-slate-700"
+                  className="inline-flex items-center gap-2 hover:underline text-slate-700 dark:text-slate-200 dark:hover:text-white"
                 >
                   <Linkedin size={18} /> LinkedIn Profile
                 </a>
@@ -97,7 +97,7 @@ export default function Contact() {
               <li>
                 <a
                   href="mailto:mikkilineninithinsai9@gmail.com"
-                  className="inline-flex items-center gap-2 hover:underline text-slate-700"
+                  className="inline-flex items-center gap-2 hover:underline text-slate-700 dark:text-slate-200 dark:hover:text-white"
                 >
                   <Mail size={18} /> Email Me
                 </a>

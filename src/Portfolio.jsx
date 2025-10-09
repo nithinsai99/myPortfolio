@@ -47,45 +47,20 @@ export default function Portfolio() {
   ];
 
   const skills = [
-    "C++", "Java Script", "Python", "Postgres / MySQL",
+    "C++", "JavaScript", "Python", "Postgres / MySQL",
     "Docker / Kubernetes", "AWS / Azure", "Restful APIs", "Algorithm Design", "System Design"
   ];
 
   return (
-    <div className="flex">
-        <Header />
-        <main className="flex-1 snap-y snap-mandatory overflow-y-auto">
-            <section
-            id="hero"
-            className="h-screen snap-start flex items-center justify-center"
-            >
-            <Hero skills={skills} />
-            </section>
-
-            <section
-            id="projects"
-            className="min-h-screen snap-start flex items-center justify-center px-6 md:px-12 py-24"
-            >
-            <Projects projects={projects} />
-            </section>
-
-            <section
-            id="about"
-            className="min-h-screen snap-start flex items-center justify-center px-6 md:px-12 py-24"
-            >
-            <About />
-            </section>
-
-            <section
-            id="contact"
-            className="min-h-screen snap-start flex items-center justify-center px-6 md:px-12 py-24"
-            >
-            <Contact />
-            </section>
-            <Footer />
-        </main>
-        
+    <div className="bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-200">
+      <Header />
+      <main>
+        <Hero skills={skills} />
+        <Projects projects={projects} />
+        <About />
+        <Contact />
+        <Footer />
+      </main>
     </div>
-
   );
 }

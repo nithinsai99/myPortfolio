@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail } from "lucide-react";
+import React from "react";
 import { motion } from "framer-motion";
 
 export default function About() {
@@ -73,68 +73,77 @@ export default function About() {
   ];
 
   return (
-    <section id="about" className="mt-20">
+    <section id="about" className="py-20">
       <motion.h2
         initial={{ opacity: 0, y: -30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6, ease: "easeOut" }}
-        className="mb-12 text-4xl md:text-5xl font-extrabold text-center bg-gradient-to-r from-indigo-600 to-purple-500 bg-clip-text text-transparent"
+        className="mb-16 text-4xl md:text-5xl font-extrabold text-center bg-gradient-to-r from-indigo-600 to-purple-500 bg-clip-text text-transparent"
       >
         👨‍💻 About Me
       </motion.h2>
 
-      {/* Timeline */}
-      <div className="relative max-w-6xl mx-auto">
-        {/* Center line */}
-        <div className="absolute left-1/2 top-0 h-full w-1 bg-slate-300 -translate-x-1/2"></div>
-
-        <div className="space-y-12">
+      <div className="w-full max-w-screen-xl mx-auto px-6">
+        {/* Grid Container for the entire timeline */}
+        <div className="grid grid-cols-[1fr_auto_1fr] gap-x-8 md:gap-x-12">
           {timeline.map((item, i) => (
-            <motion.div
-              key={item.id}
-              initial={{ opacity: 0, x: item.side === "left" ? -40 : 40 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
-              className={`relative flex items-start ${
-                item.side === "left" ? "justify-start" : "justify-end"
-              }`}
-            >
-              <div
-                className={`w-1/2 px-6 ${
-                  item.side === "left" ? "text-right pr-10" : "text-left pl-10"
-                }`}
-              >
-                <h3 className="text-lg font-bold text-slate-900">
-                  {item.role}{" "}
-                  <span
-                    className={`${
-                      item.side === "left" ? "text-indigo-600" : "text-purple-600"
-                    }`}
-                  >
-                    @ {item.org}
-                  </span>
-                </h3>
-                <p className="text-sm text-slate-500">
-                  {item.period} • {item.location}
-                </p>
-                <ul className="mt-2 list-disc list-inside text-slate-700 space-y-1">
-                  {item.details.map((d, idx) => (
-                    <li key={idx}>{d}</li>
-                  ))}
-                </ul>
-              </div>
+            <React.Fragment key={item.id}>
+              {/* --- 1. Left Column --- */}
+              {item.side === "left" ? (
+                <TimelineCard item={item} animation={{ x: -40 }} />
+              ) : (
+                <div /> /* Empty div to occupy grid cell */
+              )}
 
-              {/* Dot marker */}
-              <span
-                className={`absolute left-1/2 top-2 w-5 h-5 rounded-full ${
-                  item.side === "left" ? "bg-indigo-500" : "bg-purple-500"
-                } border-2 border-white shadow -translate-x-1/2`}
-              ></span>
-            </motion.div>
+              {/* --- 2. Center Column (Dot and Line) --- */}
+              <TimelineGutter isLastItem={i === timeline.length - 1} item={item} />
+
+              {/* --- 3. Right Column --- */}
+              {item.side === "right" ? (
+                <TimelineCard item={item} animation={{ x: 40 }} />
+              ) : (
+                <div /> /* Empty div to occupy grid cell */
+              )}
+            </React.Fragment>
           ))}
         </div>
       </div>
     </section>
   );
 }
+
+// Helper component for the content card
+const TimelineCard = ({ item, animation }) => (
+  <motion.div
+    initial={{ opacity: 0, x: animation.x }}
+    whileInView={{ opacity: 1, x: 0 }}
+    transition={{ duration: 0.5 }}
+    className={`pb-12 ${item.side === 'left' ? 'text-right' : 'text-left'}`}
+  >
+    <h3 className="text-lg font-bold text-slate-900 dark:text-slate-100">
+      {item.role}{" "}
+      <span className="text-indigo-600 dark:text-indigo-400">@ {item.org}</span>
+    </h3>
+    <p className="text-sm text-slate-500 dark:text-slate-400 mt-1">
+      {item.period} • {item.location}
+    </p>
+    <ul className="mt-3 list-disc list-inside text-slate-700 dark:text-slate-300 space-y-1">
+      {item.details.map((d, idx) => (
+        <li key={idx}>{d}</li>
+      ))}
+    </ul>
+  </motion.div>
+);
+
+// Helper component for the center line and dot
+const TimelineGutter = ({ isLastItem, item }) => (
+  <div className="relative flex justify-center">
+    {/* The Dot */}
+    <div className={`w-5 h-5 rounded-full z-10 border-2 border-white dark:border-slate-900 shadow ${item.side === 'left' ? 'bg-indigo-500' : 'bg-purple-500'}`}></div>
+    {/* The Line (don't render for the last item) */}
+    {!isLastItem && (
+      <div className="absolute top-2.5 h-full w-0.5 bg-slate-300 dark:bg-slate-700"></div>
+    )}
+  </div>
+);

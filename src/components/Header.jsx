@@ -1,57 +1,74 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
-import { ModeToggle } from "./mode-toggle"; // Import the new component
+import { ModeToggle } from "./mode-toggle"; // Assuming this component is styled
 
 export default function Header() {
-  // NOTE: All old theme logic (useState, useEffect) has been removed from this file.
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const navLinks = ["Projects", "About", "Contact"];
+  const navLinks = [
+    { title: "Projects", href: "#projects" },
+    { title: "About", href: "#about" },
+    { title: "Contact", href: "#contact" },
+  ];
 
   return (
     <>
       <motion.header
-        initial={{ y: -80, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
-        className="fixed top-0 left-0 w-full z-50 backdrop-blur-xl bg-white/30 dark:bg-slate-900/40 border-b border-white/20 dark:border-slate-800"
+        initial={{ y: -100 }}
+        animate={{ y: 0 }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
+        className="fixed top-0 left-0 w-full z-50 
+                   bg-white/60 dark:bg-slate-900/60 backdrop-blur-lg 
+                   border-b border-white/30 dark:border-slate-700/50"
       >
-        <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+        <div className="max-w-screen-2xl mx-auto px-6 md:px-12 py-3 flex items-center justify-between">
           {/* Logo + Name */}
-          <div className="flex items-center gap-4">
+          <a href="#hero" className="flex items-center gap-3 group">
             <motion.div
-              whileHover={{ scale: 1.08 }}
-              whileTap={{ scale: 0.92 }}
-              className="w-14 h-14 rounded-full bg-white/20 dark:bg-slate-800/40 backdrop-blur-xl border border-white/40 dark:border-slate-700 shadow-lg flex items-center justify-center font-semibold"
+              whileHover={{ scale: 1.1, rotate: -15 }}
+              className="w-12 h-12 rounded-full bg-white/70 dark:bg-slate-800/70 backdrop-blur-md 
+                         border border-white/40 dark:border-slate-700 shadow-lg 
+                         flex items-center justify-center font-bold"
             >
-              <span className="text-lg font-bold text-slate-900 dark:text-slate-100 drop-shadow">
-                MNS
+              <span className="text-xl font-bold bg-gradient-to-r from-indigo-600 to-purple-500 bg-clip-text text-transparent">
+                NS
               </span>
             </motion.div>
             <div>
-              <div className="text-lg font-semibold tracking-tight text-slate-900 dark:text-slate-100">
-                Nithin Sai Mikkilineni
+              <div className="text-lg font-bold tracking-tight text-slate-900 dark:text-slate-100 
+                             group-hover:bg-gradient-to-r from-indigo-600 to-purple-500 group-hover:bg-clip-text group-hover:text-transparent transition-colors duration-300">
+                Nithin Sai
               </div>
               <div className="text-sm text-slate-600 dark:text-slate-400">
-                Software Engineer • Cloud & Systems
+                Software & Cloud Engineer
               </div>
             </div>
-          </div>
+          </a>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-6 text-sm font-medium">
+          <nav className="hidden md:flex items-center gap-2 text-sm font-medium">
             {navLinks.map((item) => (
-              <motion.a key={item} href={`#${item.toLowerCase()}`} whileHover={{ scale: 1.08, y: -2 }} className="px-3 py-1 rounded-md text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors cursor-pointer">
-                {item}
-              </motion.a>
+              <a
+                key={item.title}
+                href={item.href}
+                className="px-4 py-2 rounded-full text-slate-700 dark:text-slate-300 
+                           hover:bg-white/50 dark:hover:bg-slate-800/50
+                           hover:text-slate-900 dark:hover:text-white transition-colors duration-300"
+              >
+                {item.title}
+              </a>
             ))}
-            <motion.a href="#resume" whileHover={{ scale: 1.05 }} className="px-4 py-1.5 bg-slate-800 text-white dark:bg-slate-100 dark:text-slate-900 rounded-full shadow-md hover:bg-slate-900 dark:hover:bg-white transition cursor-pointer">
+            <a
+              href="#resume" // Assuming you have a resume file or section
+              className="ml-4 px-5 py-2 rounded-xl text-black font-semibold shadow-lg 
+                         bg-gradient-to-r from-blue-100 to-cyan-200
+                         hover:scale-105 hover:from-blue-200 hover:to-cyan-300 transition-transform 
+                         dark:bg-gradient-to-r dark:from-indigo-700 dark:to-purple-700 dark:text-white"
+            >
               Resume
-            </motion.a>
-            
-            {/* Using the new ModeToggle component for desktop */}
-            <div className="ml-4 relative">
+            </a>
+            <div className="ml-2">
               <ModeToggle />
             </div>
           </nav>
@@ -61,7 +78,7 @@ export default function Header() {
             <motion.button
               whileTap={{ scale: 0.85 }}
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="p-2 rounded-full bg-slate-200/80 dark:bg-slate-800/80"
+              className="p-2 rounded-full bg-white/70 dark:bg-slate-800/70"
               aria-label="Toggle menu"
             >
               {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
@@ -74,28 +91,29 @@ export default function Header() {
       <AnimatePresence>
         {isMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -50 }}
+            initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -50 }}
-            transition={{ duration: 0.3, ease: "easeInOut" }}
-            className="fixed top-24 left-0 w-full z-40 md:hidden"
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.2, ease: "easeInOut" }}
+            className="fixed top-[70px] inset-x-0 z-40 md:hidden"
           >
-            <div className="mx-6 p-6 rounded-2xl bg-white/80 dark:bg-slate-900/80 backdrop-blur-lg border border-slate-200 dark:border-slate-800 shadow-xl">
-              <nav className="flex flex-col items-center gap-6 text-lg font-medium">
-                {navLinks.map((item) => (
-                  <a key={item} href={`#${item.toLowerCase()}`} onClick={() => setIsMenuOpen(false)} className="w-full text-center py-2 rounded-md text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors">
-                    {item}
+            <div className="mx-6 p-4 rounded-2xl bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl 
+                        border border-slate-200 dark:border-slate-800 shadow-xl">
+              <nav className="flex flex-col items-center gap-2 text-base font-medium">
+                {[...navLinks, { title: "Resume", href: "#resume" }].map((item) => (
+                  <a
+                    key={item.title}
+                    href={item.href}
+                    onClick={() => setIsMenuOpen(false)}
+                    className="w-full text-center py-3 rounded-lg text-slate-800 dark:text-slate-200 
+                               hover:bg-indigo-100 dark:hover:bg-slate-800/70 transition-colors"
+                  >
+                    {item.title}
                   </a>
                 ))}
-                <a href="#resume" onClick={() => setIsMenuOpen(false)} className="w-full text-center py-2 rounded-md text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors">
-                  Resume
-                </a>
-                
-                {/* Using the new ModeToggle component for mobile */}
-                <div className="mt-4 relative">
+                <div className="mt-4">
                   <ModeToggle />
                 </div>
-
               </nav>
             </div>
           </motion.div>

@@ -60,7 +60,7 @@ export default function Header() {
               </a>
             ))}
             <a
-              href="#resume" // Assuming you have a resume file or section
+              href="https://drive.google.com/file/d/1Mu8Lh3627Txiepnd1mRxGd947EZegNdI/view?usp=sharing" // Assuming you have a resume file or section
               className="ml-4 px-5 py-2 rounded-xl text-black font-semibold shadow-lg 
                          bg-gradient-to-r from-blue-100 to-cyan-200
                          hover:scale-105 hover:from-blue-200 hover:to-cyan-300 transition-transform 

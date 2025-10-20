@@ -91,13 +91,13 @@ export default function Hero({ skills }) {
 
           {/* Social Icons: Centered on mobile, align start on desktop */}
           <div className="mt-8 flex items-center justify-center md:justify-start gap-5 text-slate-600 dark:text-slate-300">
-            <a href="#" aria-label="GitHub" className="hover:text-slate-900 dark:hover:text-white">
+            <a href="https://github.com/nithinsai99/" aria-label="GitHub" className="hover:text-slate-900 dark:hover:text-white">
               <Github size={24} />
             </a>
-            <a href="#" aria-label="LinkedIn" className="hover:text-slate-900 dark:hover:text-white">
+            <a href="https://www.linkedin.com/in/nithinsai-m/" aria-label="LinkedIn" className="hover:text-slate-900 dark:hover:text-white">
               <Linkedin size={24} />
             </a>
-            <a href="#contact" aria-label="Email" className="hover:text-slate-900 dark:hover:text-white">
+            <a href="mailto:mikkilineninithinsai9@gmail.com" aria-label="Email" className="hover:text-slate-900 dark:hover:text-white">
               <Mail size={24} />
             </a>
           </div>

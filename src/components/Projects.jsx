@@ -58,9 +58,9 @@ export default function Projects({ projects }) {
                          hover:shadow-2xl transition-shadow duration-300"
             >
               {/* Image Placeholder */}
-              <div className="aspect-video w-full bg-slate-200/50 dark:bg-slate-700/50 rounded-lg mb-4 flex items-center justify-center">
+              {/* <div className="aspect-video w-full bg-slate-200/50 dark:bg-slate-700/50 rounded-lg mb-4 flex items-center justify-center">
                 <span className="text-slate-400 dark:text-slate-500 text-sm">Image Preview</span>
-              </div>
+              </div> */}
 
               <div className="flex flex-col flex-grow">
                 <h3 className="text-xl font-bold text-slate-900 dark:text-slate-100">{p.title}</h3>
@@ -94,7 +94,7 @@ export default function Projects({ projects }) {
                     <Github size={22} />
                   </a>
                 )}
-                {p.demo && (
+                {/* {p.demo && (
                   <a
                     href={p.demo}
                     target="_blank"
@@ -104,7 +104,7 @@ export default function Projects({ projects }) {
                   >
                     <ExternalLink size={22} />
                   </a>
-                )}
+                )} */}
               </div>
             </article>
           </motion.div>

@@ -6,7 +6,7 @@ export default function Contact() {
     {
       icon: <FileText size={20} />,
       text: "View My Resume",
-      href: "#resume", // Replace with your resume link
+      href: "https://drive.google.com/file/d/1Mu8Lh3627Txiepnd1mRxGd947EZegNdI/view?usp=sharing", // Replace with your resume link
     },
     {
       icon: <Github size={20} />,

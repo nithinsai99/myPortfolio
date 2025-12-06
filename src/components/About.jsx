@@ -9,14 +9,15 @@ const timeline = [
       side: "right",
       category: "Work",
       icon: <Briefcase />,
-      role: "IT Support - Student Assistant",
+      role: "Graduate Assistant - Software Engineer ",
       org: "Texas Tech University Health Sciences Center",
-      period: "Feb 2025 – Present",
+      period: "Sep 2024 – Present",
       location: "Lubbock, TX",
       details: [
-        "Resolved 20–30 technical issues per shift, reducing resolution time by 25% for 1,000+ users.",
-        "Developed 7 Power BI dashboards enabling 10% faster issue triage.",
-        "Automated workflows with PowerShell, cutting manual work by 40%."
+        "Developed Forecast AI, a predictive analytics system using Random Forest models to forecast energy usage for solar plants, supporting data-driven planning.",
+        "Architected scalable multi-cloud infrastructure leveraging AWS and Azure, with automated deployment pipelines, improving handling of data loads and inference workloads.",
+        "Designed and maintained test automation frameworks and internal automation scripts using Python and PowerShell, reducing manual workflow by 40% and enhancing operational efficiency.",
+        "Maintained server infrastructure and optimized diagnostic workflows, ensuring high availability for over 1,000 active users and supporting automated system monitoring."
       ],
     },
     {
@@ -52,14 +53,14 @@ const timeline = [
       side: "right",
       category: "Work",
       icon: <Briefcase />,
-      role: "Student Developer",
+      role: "Student Software Engineer ",
       org: "Koneru Lakshmaiah University",
       period: "Aug 2021 – Apr 2023",
-      location: "India",
+      location: "",
       details: [
-        "Directed the development of a MERN-stack student performance tracking platform, adopted by 500+ users.",
-        "Optimized backend queries and frontend rendering, which together reduced page load times by 30%.",
-        "Implemented RBAC authentication for secure access to sensitive academic data."
+        "Architected a scalable academic analytics platform using ASP.NET Core and C#, serving 500+ daily users and improving data accessibility for faculty.",
+        "Optimized Entity Framework queries and SQL stored procedures, reducing page load times by 30% for data-heavy dashboards.",
+        "Directed the student developer team in improving database efficiency and UI performance, achieving a 25% increase in overall application responsiveness."
       ],
     },
     {
@@ -70,7 +71,7 @@ const timeline = [
       role: "B.Tech Computer Science (Minor in Data Science)",
       org: "KL University",
       period: "Aug 2020 – May 2024",
-      location: "India",
+      location: "",
       details: [
         "Graduated with a GPA of 9.37/10",
         "Relevant Coursework: Operating Systems, Database Management, Data Structures & Algorithms, Data Science."

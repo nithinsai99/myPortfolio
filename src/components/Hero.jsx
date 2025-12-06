@@ -4,7 +4,7 @@ import { Mail, Github, Linkedin, Code2, Cloud, Terminal } from "lucide-react";
 
 export default function Hero({ skills }) {
   // The titles array is now a constant outside the component to prevent re-creation on renders.
-  const titles = ["Nithin Sai", "Software Developer", "Cloud Engineer", "Full Stack Developer"];
+  const titles = ["Nithin Sai", "Software Engineer", "Cloud Engineer", "Backend Developer"];
   const [index, setIndex] = useState(0);
   const [displayText, setDisplayText] = useState("");
 
@@ -79,13 +79,13 @@ export default function Hero({ skills }) {
               href="#projects"
               className="px-6 py-2.5 w-full sm:w-auto text-center rounded-xl bg-gradient-to-r from-blue-100 to-cyan-200 text-black font-semibold shadow-lg hover:scale-105 hover:from-blue-200 hover:to-cyan-300 transition-transform dark:bg-gradient-to-r dark:from-indigo-700 dark:to-purple-700 dark:text-white"
             >
-              🚀 View Projects
+              View Projects
             </a>
             <a
               href="#contact"
               className="px-6 py-2.5 w-full sm:w-auto text-center rounded-xl border border-blue-500 text-blue-600 hover:bg-blue-50 shadow font-semibold dark:border-indigo-400 dark:text-indigo-300 dark:hover:bg-indigo-800/40"
             >
-              ✉️ Get in Touch
+              Get in Touch
             </a>
           </div>
 
@@ -111,9 +111,9 @@ export default function Hero({ skills }) {
           transition={{ duration: 0.7 }}
         >
           <div className="grid grid-cols-2 gap-4 sm:gap-6">
-            <Stat icon={<Code2 className="text-indigo-600 dark:text-indigo-400" />} label="Experience" value="2+ yrs" />
+            <Stat icon={<Code2 className="text-indigo-600 dark:text-indigo-400" />} label="Experience" value="3+ yrs" />
             <Stat icon={<Terminal className="text-purple-600 dark:text-purple-400" />} label="Primary" value="C++" />
-            <Stat icon={<Cloud className="text-blue-500 dark:text-blue-400" />} label="Cloud" value="AWS" />
+            <Stat icon={<Cloud className="text-blue-500 dark:text-blue-400" />} label="Cloud" value="AWS, Azure" />
             <Stat icon={<Github className="text-slate-800 dark:text-slate-200" />} label="Open Source" value="Contributor" />
           </div>
 

@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import { Github, ExternalLink } from "lucide-react";
+import { ExternalLink } from "lucide-react";
+import { FiGithub } from 'react-icons/fi';
 
 export default function Projects({ projects }) {
   // Animation variants for the container to orchestrate children animations
@@ -91,7 +92,7 @@ export default function Projects({ projects }) {
                     aria-label={`${p.title} GitHub Repository`}
                     className="text-slate-500 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
                   >
-                    <Github size={22} />
+                    <FiGithub size={22} />
                   </a>
                 )}
                 {/* {p.demo && (

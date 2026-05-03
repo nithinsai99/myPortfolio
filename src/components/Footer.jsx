@@ -1,10 +1,11 @@
-import { Github, Linkedin, Mail } from "lucide-react";
+import { Mail } from "lucide-react";
+import { FiGithub, FiLinkedin } from 'react-icons/fi';
 
 export default function Footer() {
   const socialLinks = [
-    { icon: <Github size={20} />, href: "#", label: "GitHub" },
-    { icon: <Linkedin size={20} />, href: "#", label: "LinkedIn" },
-    { icon: <Mail size={20} />, href: "#contact", label: "Email" },
+    { icon: <FiGithub size={20} />, href: "https://github.com/nithinsai99", label: "GitHub" },
+    { icon: <FiLinkedin size={20} />, href: "https://www.linkedin.com/in/nithinsai-m", label: "LinkedIn" },
+    { icon: <Mail size={20} />, href: "mailto:mikkilineninithinsai9@gmail.com", label: "Email" },
   ];
 
   return (

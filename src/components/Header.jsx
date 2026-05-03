@@ -59,15 +59,15 @@ export default function Header() {
                 {item.title}
               </a>
             ))}
-            <a
-              href="https://drive.google.com/file/d/1Mu8Lh3627Txiepnd1mRxGd947EZegNdI/view?usp=sharing" // Assuming you have a resume file or section
+            {/* <a
+              href="https://drive.google.com/file/d/1gYLuB7oiyRzCPOE61z8bC8Trynz7m2pH/view?usp=sharing" // Assuming you have a resume file or section
               className="ml-4 px-5 py-2 rounded-xl text-black font-semibold shadow-lg 
                          bg-gradient-to-r from-blue-100 to-cyan-200
                          hover:scale-105 hover:from-blue-200 hover:to-cyan-300 transition-transform 
                          dark:bg-gradient-to-r dark:from-indigo-700 dark:to-purple-700 dark:text-white"
             >
               Resume
-            </a>
+            </a> */}
             <div className="ml-2">
               <ModeToggle />
             </div>

@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Mail, Github, Linkedin, Code2, Cloud, Terminal } from "lucide-react";
+import { Mail, Code2, Cloud, Terminal, Network } from "lucide-react";
+import { FiGithub, FiLinkedin } from 'react-icons/fi';
 
 export default function Hero({ skills }) {
   // The titles array is now a constant outside the component to prevent re-creation on renders.
-  const titles = ["Nithin Sai", "Software Engineer", "Cloud Engineer", "Backend Developer"];
+  const titles = ["Nithin Sai", "Software Engineer", "Cloud Engineer", "Backend Developer", "ML Engineer"];
   const [index, setIndex] = useState(0);
   const [displayText, setDisplayText] = useState("");
 
@@ -65,13 +66,18 @@ export default function Hero({ skills }) {
           </h1>
 
           {/* Subheading: Adjusted alignment for mobile */}
-          <p className="mt-4 text-lg text-slate-700 dark:text-slate-300 max-w-xl text-center md:text-left">
-            Software Engineer passionate about{" "}
-            <span className="font-semibold">scalable systems</span>,{" "}
-            <span className="font-semibold">cloud-native platforms</span>, and
-            developer-first tools. Focused on observability, reliability, and
-            elegant code.
-          </p>
+          {/* <p className="mt-4 text-lg text-slate-700 dark:text-slate-300 max-w-xl text-center md:text-left">
+            Software Engineer specializing in distributed systems and scalable
+            cloud-native backend architectures using <span className="font-semibold">.NET Core</span>,{" "}
+            <span className="font-semibold">gRPC</span>, and <span className="font-semibold">Kubernetes</span>. Skilled in C#, Python, and C++ with a focus on
+            reliable, high-throughput systems and automated CI/CD practices.
+          </p> */}
+
+          <div className="mt-4 text-lg text-slate-700 dark:text-slate-300 max-w-xl flex flex-col items-start gap-4 text-left">
+            <span>
+              Software Engineer eager to contribute to impactful projects. Driven by a deep curiosity for effective software design, with a strong focus on applying clean architecture and core design principles to build modular, scalable, and highly maintainable systems.
+            </span>
+          </div>
 
           {/* Buttons: Centered on mobile, stack on xs screens, align start on desktop */}
           <div className="mt-8 flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4">
@@ -91,11 +97,11 @@ export default function Hero({ skills }) {
 
           {/* Social Icons: Centered on mobile, align start on desktop */}
           <div className="mt-8 flex items-center justify-center md:justify-start gap-5 text-slate-600 dark:text-slate-300">
-            <a href="https://github.com/nithinsai99/" aria-label="GitHub" className="hover:text-slate-900 dark:hover:text-white">
-              <Github size={24} />
+            <a href="https://github.com/nithinsai99/" aria-label="FiGitHub" className="hover:text-slate-900 dark:hover:text-white">
+              <FiGithub size={24} />
             </a>
-            <a href="https://www.linkedin.com/in/nithinsai-m/" aria-label="LinkedIn" className="hover:text-slate-900 dark:hover:text-white">
-              <Linkedin size={24} />
+            <a href="https://www.linkedin.com/in/nithinsai-m/" aria-label="FiLinkedIn" className="hover:text-slate-900 dark:hover:text-white">
+              <FiLinkedin size={24} />
             </a>
             <a href="mailto:mikkilineninithinsai9@gmail.com" aria-label="Email" className="hover:text-slate-900 dark:hover:text-white">
               <Mail size={24} />
@@ -112,9 +118,9 @@ export default function Hero({ skills }) {
         >
           <div className="grid grid-cols-2 gap-4 sm:gap-6">
             <Stat icon={<Code2 className="text-indigo-600 dark:text-indigo-400" />} label="Experience" value="3+ yrs" />
-            <Stat icon={<Terminal className="text-purple-600 dark:text-purple-400" />} label="Primary" value="C++" />
+            <Stat icon={<Terminal className="text-purple-600 dark:text-purple-400" />} label="Primary" value="C++, Python" />
             <Stat icon={<Cloud className="text-blue-500 dark:text-blue-400" />} label="Cloud" value="AWS, Azure" />
-            <Stat icon={<Github className="text-slate-800 dark:text-slate-200" />} label="Open Source" value="Contributor" />
+            <Stat icon={<Network className="text-cyan-500 dark:text-cyan-400" />} label="Specialization" value="Dist. Systems" />
           </div>
 
           <div className="mt-8">

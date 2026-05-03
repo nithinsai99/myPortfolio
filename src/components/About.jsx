@@ -4,80 +4,98 @@ import { Briefcase, GraduationCap } from "lucide-react";
 
 // Updated timeline data - no structural changes needed
 const timeline = [
-    {
-      id: 1,
-      side: "right",
-      category: "Work",
-      icon: <Briefcase />,
-      role: "Graduate Assistant - Software Engineer ",
-      org: "Texas Tech University Health Sciences Center",
-      period: "Sep 2024 – Present",
-      location: "Lubbock, TX",
-      details: [
-        "Developed Forecast AI, a predictive analytics system using Random Forest models to forecast energy usage for solar plants, supporting data-driven planning.",
-        "Architected scalable multi-cloud infrastructure leveraging AWS and Azure, with automated deployment pipelines, improving handling of data loads and inference workloads.",
-        "Designed and maintained test automation frameworks and internal automation scripts using Python and PowerShell, reducing manual workflow by 40% and enhancing operational efficiency.",
-        "Maintained server infrastructure and optimized diagnostic workflows, ensuring high availability for over 1,000 active users and supporting automated system monitoring."
-      ],
-    },
-    {
-      id: 2,
-      side: "left",
-      category: "Education",
-      icon: <GraduationCap />,
-      role: "M.S. Computer and Information Science",
-      org: "Texas Tech University",
-      period: "Aug 2024 – May 2026",
-      location: "Texas, USA",
-      details: [
-        "Relevant Coursework: Advanced Software Engineering, Cloud Computing, Algorithms, Artificial Intelligence."
-      ],
-    },
-    {
-      id: 3,
-      side: "right",
-      category: "Work",
-      icon: <Briefcase />,
-      role: "Software Engineer Intern – Azure Core",
-      org: "Microsoft",
-      period: "May 2023 – Jul 2023",
-      location: "Remote",
-      details: [
-        "Engineered high-performance gRPC microservices in C++, reducing inter-service latency by 40%.",
-        "Built a real-time log monitoring web app using React & Go, processing over 10,000 entries per day.",
-        "Delivered production-ready features via Agile sprints and CI/CD pipelines in Azure DevOps."
-      ],
-    },
-    {
-      id: 4,
-      side: "right",
-      category: "Work",
-      icon: <Briefcase />,
-      role: "Student Software Engineer ",
-      org: "Koneru Lakshmaiah University",
-      period: "Aug 2021 – Apr 2023",
-      location: "",
-      details: [
-        "Architected a scalable academic analytics platform using ASP.NET Core and C#, serving 500+ daily users and improving data accessibility for faculty.",
-        "Optimized Entity Framework queries and SQL stored procedures, reducing page load times by 30% for data-heavy dashboards.",
-        "Directed the student developer team in improving database efficiency and UI performance, achieving a 25% increase in overall application responsiveness."
-      ],
-    },
-    {
-      id: 5,
-      side: "left",
-      category: "Education",
-      icon: <GraduationCap />,
-      role: "B.Tech Computer Science (Minor in Data Science)",
-      org: "KL University",
-      period: "Aug 2020 – May 2024",
-      location: "",
-      details: [
-        "Graduated with a GPA of 9.37/10",
-        "Relevant Coursework: Operating Systems, Database Management, Data Structures & Algorithms, Data Science."
-      ],
-    },
-  ];
+  {
+    id: 1,
+    side: "right",
+    category: "Work",
+    icon: <Briefcase />,
+    role: "Software Engineer (Graduate Assistant)",
+    org: "Texas Tech University",
+    period: "Mar 2025 – Present",
+    location: "Lubbock, TX",
+    details: [
+      "Developed Forecast AI, a predictive analytics system using C# and Random Forest models to forecast energy usage for solar plants and support distribution planning.",
+      "Architected multi-cloud infrastructure across AWS and Azure to handle larger data loads and real-time model inference, improving system scalability.",
+      "Engineered internal automation scripts using Python and PowerShell, reducing manual workflows by 40% and increasing operational efficiency.",
+      "Maintained server infrastructure and optimized diagnostic workflows, ensuring high availability for 1,000+ active users."
+    ],
+  },
+  {
+    id: 2,
+    side: "right",
+    category: "Work",
+    icon: <Briefcase />,
+    role: "IT Support Specialist (Student Assistant)",
+    org: "Texas Tech University",
+    period: "Aug 2024 – Mar 2025",
+    location: "Lubbock, TX",
+    details: [
+      "Resolved high-volume technical support tickets via ServiceNow and CXone, reducing downtime for faculty and staff across Windows and macOS.",
+      "Guided users through multi-factor authentication (MFA) and account recovery protocols to ensure secure access to sensitive systems.",
+      "Provided remote technical guidance to non-technical users, decreasing ticket escalation rates through effective first-line troubleshooting.",
+    ],
+  },
+  {
+    id: 3,
+    side: "left",
+    category: "Education",
+    icon: <GraduationCap />,
+    role: "M.S. Computer and Information Science",
+    org: "Texas Tech University",
+    period: "Aug 2024 – May 2026",
+    location: "Lubbock, TX",
+    details: [
+      "Coursework: Software Foundations, Computer Architecture, Algorithms, Artificial Intelligence, Analysis of Algorithms, Computational Theory."
+    ],
+  },
+  {
+    id: 4,
+    side: "right",
+    category: "Work",
+    icon: <Briefcase />,
+    role: "Software Engineer Intern",
+    org: "Microsoft",
+    period: "May 2023 – Jul 2023",
+    location: "Remote",
+    details: [
+      "Engineered gRPC-based microservices and network optimizations, reducing inter-service latency by 40% for systems serving millions of daily requests.",
+      "Built an automated diagnostic feature to trigger real-time network analysis via CLI, integrating telemetry systems to replace manual workflows.",
+      "Delivered production-ready features through Azure DevOps CI/CD pipelines, improving deployment reliability and service stability.",
+      "Refactored core networking components and expanded automated test coverage to improve scalability and maintainability."
+    ],
+  },
+  {
+    id: 5,
+    side: "right",
+    category: "Work",
+    icon: <Briefcase />,
+    role: "Student Software Engineer (Peer Mentor)",
+    org: "Koneru Lakshmaiah University",
+    period: "Aug 2021 – Apr 2023",
+    location: "",
+    details: [
+      "Designed a scalable ASP.NET Core platform to collect, analyze, and visualize academic data, serving 500+ daily users.",
+      "Optimized Entity Framework queries and SQL stored procedures, reducing page load times by 30% for data-heavy dashboards.",
+      "Implemented RBAC using .NET Identity to ensure secure data handling and compliance.",
+      "Automated administrative workflows by integrating ServiceNow APIs with C# background services, cutting manual processing by 25%.",
+      "Directed the student developer team to improve database efficiency and UI performance, boosting responsiveness by 25%."
+    ],
+  },
+  {
+    id: 6,
+    side: "left",
+    category: "Education",
+    icon: <GraduationCap />,
+    role: "B.Tech Computer Science and Engineering",
+    org: "KL University",
+    period: "Aug 2020 – May 2024",
+    location: "",
+    details: [
+      "GPA: 9.37/10",
+      "Coursework: Operating Systems, Databases, Algorithms, Programming Languages, Computer Architecture, Engineering Entrepreneurship, Intro to Data Science."
+    ],
+  },
+];
 
 export default function About() {
   return (

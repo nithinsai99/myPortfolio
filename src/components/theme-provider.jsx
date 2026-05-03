@@ -19,21 +19,35 @@ export function ThemeProvider({
 
   useEffect(() => {
     const root = window.document.documentElement;
-    
-    // Determine the effective theme
-    const effectiveTheme = (() => {
+    const media = window.matchMedia("(prefers-color-scheme: dark)");
+
+    const applyTheme = (nextTheme) => {
+      if (nextTheme === "dark") {
+        root.classList.add("dark");
+        root.style.colorScheme = "dark";
+      } else {
+        root.classList.remove("dark");
+        root.style.colorScheme = "light";
+      }
+    };
+
+    const resolveTheme = () => {
       if (theme === "system") {
-        return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        return media.matches ? "dark" : "light";
       }
       return theme;
-    })();
+    };
 
-    // Add or remove the 'dark' class based on the effective theme
-    if (effectiveTheme === 'dark') {
-      root.classList.add('dark');
-    } else {
-      root.classList.remove('dark');
-    }
+    applyTheme(resolveTheme());
+
+    const handleChange = () => {
+      if (theme === "system") {
+        applyTheme(resolveTheme());
+      }
+    };
+
+    media.addEventListener("change", handleChange);
+    return () => media.removeEventListener("change", handleChange);
   }, [theme]);
 
   const value = {

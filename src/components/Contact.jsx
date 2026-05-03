@@ -1,20 +1,21 @@
 import { motion } from "framer-motion";
-import { Github, Linkedin, Mail, FileText } from "lucide-react";
+import { Mail, FileText, Phone } from "lucide-react";
+import { FiGithub, FiLinkedin } from 'react-icons/fi';
 
 export default function Contact() {
   const quickLinks = [
     {
-      icon: <FileText size={20} />,
-      text: "View My Resume",
-      href: "https://drive.google.com/file/d/1wgRui1sNfleae6JuwKwPEneliRzmxKOJ/view?usp=sharing", // Replace with your resume link
+      icon: <Phone size={20} />,
+      text: "+1 806-283-7746",
+      href: "tel:+18062837746",
     },
     {
-      icon: <Github size={20} />,
+      icon: <FiGithub size={20} />,
       text: "GitHub Profile",
       href: "https://github.com/nithinsai99", // Replace with your GitHub link
     },
     {
-      icon: <Linkedin size={20} />,
+      icon: <FiLinkedin size={20} />,
       text: "LinkedIn Profile",
       href: "https://www.linkedin.com/in/nithinsai-m", // Replace with your LinkedIn link
     },
@@ -55,7 +56,7 @@ export default function Contact() {
           className="space-y-4"
         >
           <p className="text-lg text-slate-700 dark:text-slate-300">
-            I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions. Feel free to reach out using the form or connect with me through my channels.
+            I'm always open to discussing new projects, creative ideas, and curious to be part of greater vision. Feel free to reach out using the form or connect with me through my channels.
           </p>
           <div className="space-y-4 pt-4">
             {quickLinks.map((link, index) => (
